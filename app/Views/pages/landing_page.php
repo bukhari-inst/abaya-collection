@@ -533,7 +533,7 @@
 <!-- / Main Section-->
 
 <!-- Footer -->
-<!-- / Footer-->
+<?= $this->include('parts/footer'); ?>
 
 <!-- Offcanvas Imports-->
 
