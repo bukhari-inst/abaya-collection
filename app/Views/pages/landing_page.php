@@ -523,12 +523,12 @@
 
     <!-- Image Hotspot Banner-->
     <?= $this->include('parts/hotspot_banner'); ?>
-    <!-- / Image Hotspot Banner-->
 
     <!-- Linked Product Carousels-->
     <?= $this->include('parts/product_carousels'); ?>
-    <!-- / Linked Product Carousels-->
 
+    <!-- Reviews -->
+    <?= $this->include('parts/reviews'); ?>
 </section>
 <!-- / Main Section-->
 
