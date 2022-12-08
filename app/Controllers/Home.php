@@ -8,4 +8,9 @@ class Home extends BaseController
     {
         return view('pages/landing_page');
     }
+
+    public function category()
+    {
+        return view('pages/users/customer/category');
+    }
 }
