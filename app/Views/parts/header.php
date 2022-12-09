@@ -14,9 +14,9 @@
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url(); ?>/assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url(); ?>/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url(); ?>/assets/favicon/favicon-16x16.png">
-    <link rel="mask-icon" href="<?= base_url(); ?>/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url(); ?>/assets/favicon/abaya-logos_1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url(); ?>/assets/favicon/abaya-logos_1.png">
+    <link rel="mask-icon" href="<?= base_url(); ?>/assets/favicon/abaya-logos_1.png" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
@@ -34,12 +34,12 @@
     <!-- Fix for custom scrollbar if JS is disabled-->
     <noscript>
         <style>
-            /**
+        /**
           * Reinstate scrolling for non-JS clients
           */
-            .simplebar-content-wrapper {
-                overflow: auto;
-            }
+        .simplebar-content-wrapper {
+            overflow: auto;
+        }
         </style>
     </noscript>
 
