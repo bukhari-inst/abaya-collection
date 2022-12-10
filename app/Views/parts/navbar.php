@@ -38,12 +38,12 @@
                             </a>
                         </li>
                         <li class="nav-item me-lg-4">
-                            <a class="nav-link fw-bolder py-lg-4" href="#">
+                            <a class="nav-link fw-bolder py-lg-4" href="<?= site_url('/login') ?>">
                                 Sign In
                             </a>
                         </li>
                         <li class="nav-item me-lg-4">
-                            <a class="nav-link fw-bolder py-lg-4" href="#">
+                            <a class="nav-link fw-bolder py-lg-4" href="<?= site_url('/register') ?>">
                                 Sign Up
                             </a>
                         </li>
