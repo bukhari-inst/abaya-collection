@@ -1,12 +1,5 @@
 <!-- header -->
 <?= $this->include('parts/header'); ?>
-<?php
-
-use Ramsey\Uuid\Uuid;
-
-$uuid = Uuid::uuid4();
-
-?>
 
 <!-- Section: Design Block -->
 <section class="background-radial-gradient overflow-hidden">
@@ -14,7 +7,7 @@ $uuid = Uuid::uuid4();
         <div class="row gx-lg-5 align-items-center mb-5">
             <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
                 <!-- hero item -->
-                <img class="img-fluid" style="max-width: 70%;" src="<?= base_url(); ?>/logo_unu.png" alt="logo_unu">
+                <!-- <img class="img-fluid" style="max-width: 70%;" src="<?= base_url(); ?>/logo_unu.png" alt="logo_unu"> -->
             </div>
 
             <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
@@ -30,37 +23,13 @@ $uuid = Uuid::uuid4();
                         <form class="user" action="<?= route_to('register') ?>" method="post">
                             <?= csrf_field() ?>
 
-                            <!-- uuid input -->
-                            <div class="form-group visually-hidden">
-                                <input type="text"
-                                    class="form-control form-control-user <?php if (session('errors.uuid')) : ?>is-invalid<?php endif ?>"
-                                    name="uuid" value="<?= esc($uuid) ?>">
-                            </div>
-
                             <!-- fullname input -->
                             <div class="form-group">
                                 <label class="form-label" for="fullname">Nama lengkap</label>
                                 <input type="text"
                                     class="form-control form-control-user <?php if (session('errors.fullname')) : ?>is-invalid<?php endif ?>"
-                                    name="fullname" placeholder="Nama lengkap beserta gelar .."
-                                    value="<?= old('fullname') ?>" required>
-                            </div>
-
-                            <!-- prodi input -->
-                            <div class="form-group">
-                                <label class="form-label" for="fullname">Program studi</label>
-                                <select id="select-prodi-r"
-                                    class="form-select <?php if (session('errors.prodi_dosen')) : ?> is-invalid <?php endif ?>"
-                                    name="prodi_dosen" style="width: 100%; border-radius: 20px;" required>
-                                    <option value="">
-                                        Pilih prodi
-                                    </option>
-                                    <?php foreach ($prodi as $prd) : ?>
-                                    <option value="<?= $prd->nama_prodi; ?>">
-                                        <?= $prd->nama_prodi; ?>
-                                    </option>
-                                    <?php endforeach ?>
-                                </select>
+                                    name="fullname" placeholder="Nama lengkap .." value="<?= old('fullname') ?>"
+                                    required>
                             </div>
 
                             <!-- Email input -->
@@ -85,10 +54,10 @@ $uuid = Uuid::uuid4();
                             <!-- 2 column grid layout with text inputs for the first and last names -->
                             <div class="form-group row mb-5">
                                 <div class="col-sm-6 mb-3 mb-sm-0 align-middle">
-                                    <label class="form-label" for="password"><?= lang('Auth.password') ?></label>
+                                    <label class="form-label" for="password">Kata sandi</label>
                                     <input id="id_password" type="password" name="password"
                                         class="form-control form-control-user <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>"
-                                        placeholder="<?= lang('Auth.password') ?>" autocomplete="off" required>
+                                        placeholder="Kata sandi" autocomplete="off" required>
                                     <span toggle="#password-field"
                                         class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                 </div>
@@ -102,7 +71,7 @@ $uuid = Uuid::uuid4();
 
                             <!-- Submit button -->
                             <button type="submit"
-                                class="btn btn-primary btn-block btn-user mb-4"><?= lang('Auth.register') ?></button>
+                                class="btn btn-primary rounded-pill btn-block btn-user mb-4"><?= lang('Auth.register') ?></button>
 
                             <!-- sign in text  -->
                             <div class="text-center">

@@ -7,7 +7,7 @@
         <div class="row gx-lg-5 align-items-center mb-5">
             <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
                 <!-- hero item -->
-                <img class="img-fluid" style="max-width: 70%;" src="<?= base_url(); ?>/logo_unu.png" alt="logo_unu">
+                <!-- <img class="img-fluid" style="max-width: 70%;" src="<?= base_url(); ?>/logo_unu.png" alt="logo_unu"> -->
             </div>
 
             <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary btn-block btn-user mb-4">Mengirim
+                            <button type="submit" class="btn btn-primary rounded-pill btn-block btn-user mb-4">Mengirim
                                 instruksi?</button>
                         </form>
                         <hr />

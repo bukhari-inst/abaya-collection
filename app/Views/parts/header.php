@@ -25,6 +25,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/theme.bundle.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/style.css" />
 
     <!-- Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">

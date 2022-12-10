@@ -1,0 +1,21 @@
+.background-radial-gradient {
+  background-image: url(../images/banners/banner-5.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+form.user .btn-user {
+  font-size: 0.8rem;
+  padding: 1rem 1.5rem;
+}
+
+form.user .form-control-user {
+  border-radius: 10rem;
+}
