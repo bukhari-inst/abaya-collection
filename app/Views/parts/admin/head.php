@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Components / Accordion - NiceAdmin Bootstrap Template</title>
+    <title>Abaya Collection</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="<?= base_url() ?>/assets/admin/img/favicon.png" rel="icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url(); ?>/assets/favicon/abaya-logos_1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url(); ?>/assets/favicon/abaya-logos_1.png">
     <link href="<?= base_url() ?>/assets/admin/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
