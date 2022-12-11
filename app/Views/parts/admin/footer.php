@@ -16,9 +16,52 @@
 <script src="<?= base_url() ?>/assets/admin/vendor/simple-datatables/simple-datatables.js"></script>
 <script src="<?= base_url() ?>/assets/admin/vendor/tinymce/tinymce.min.js"></script>
 <script src="<?= base_url() ?>/assets/admin/vendor/php-email-form/validate.js"></script>
+<script src="<?= base_url() ?>/assets/js/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <!-- Template Main JS File -->
 <script src="<?= base_url() ?>/assets/admin/js/main.js"></script>
+
+<script type="text/javascript">
+$('#saveProduk').on('click', function() {
+    var $nama = $('#nama').val();
+    var $harga = $('#harga').val();
+    var $warna = $('#warna').val();
+    var $filecover = $('#filecover').val();
+    var $fileproduk = $('#fileproduk').val();
+
+    $('input[type="file"]').change(function(e) {
+        let fileName = e.target.files[0].name;
+        alert('The file name is : "' + fileName);
+    });
+
+
+    $.ajax({
+        url: '<?= site_url('/tambahproduk') ?>',
+        type: 'POST',
+        data: {
+            nama: $nama,
+            harga: $harga,
+            warna: $warna,
+            filecover: $datas,
+            fileproduk: $fileproduk,
+        },
+        success: function(hasil) {
+            var $obj = $.parseJSON(hasil);
+            if ($obj.success == false) {
+                $('.produk-success').hide();
+                $('.produk-error').show();
+                $('.produk-error').html($obj.error);
+            } else {
+                $('.produk-error').hide();
+                $('.produk-success').show();
+                $('.produk-success').html($obj.success);
+            }
+        }
+    });
+
+});
+</script>
 
 </body>
 

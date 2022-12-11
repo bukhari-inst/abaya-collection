@@ -38,7 +38,8 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/index', 'Users::index');
 $routes->get('/category', 'Home::category');
-$routes->get('/admin', 'Admin::index');
+$routes->get('/admin', 'Staff::index');
+$routes->post('/tambahproduk', 'Staff::upload');
 
 /*
  * --------------------------------------------------------------------

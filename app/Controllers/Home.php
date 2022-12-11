@@ -16,6 +16,8 @@ class Home extends BaseController
         $roleUser = $this->Muser->getRoleUser();
 
         $data = [
+            'validation' => \Config\Services::validation(),
+            'form' => \Config\Services::form(),
             'user' => $roleUser
         ];
 
