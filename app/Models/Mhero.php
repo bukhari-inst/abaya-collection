@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Mproduk extends Model
+class Mhero extends Model
 {
-    protected $table = 'produk';
+    protected $table = 'hero';
     protected $primaryKey = 'id';
 
     protected $useTimestamps = true;
@@ -14,11 +14,11 @@ class Mproduk extends Model
     protected $returnType = 'object';
 
     protected $allowedFields = [
-        'staff_id', 'nama', 'harga', 'diskon', 'file_name',
+        'staff_id', 'nama', 'status', 'deleted_status', 'file_name',
         'created_at', 'updated_at', 'deleted_at'
     ];
 
-    public function getProdukWhereId($id = false)
+    public function getHeroWhereId($id = false)
     {
         return $this->where(['id' => $id])->first();
     }

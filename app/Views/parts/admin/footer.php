@@ -18,11 +18,26 @@
 <script src="<?= base_url() ?>/assets/admin/vendor/php-email-form/validate.js"></script>
 <script src="<?= base_url() ?>/assets/js/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" type="text/javascript">
+</script>
 <!-- Template Main JS File -->
 <script src="<?= base_url() ?>/assets/admin/js/main.js"></script>
 
 <script type="text/javascript">
+function selectProduk() {
+    $("#select-produk").select2({
+        width: 'resolve',
+        dropdownParent: $('#tambah')
+    });
+}
+
+function updateProduk(idPd) {
+    $("#select-produks" + idPd).select2({
+        width: 'resolve',
+        dropdownParent: $('#update' + idPd)
+    });
+}
+
 $('#saveProduk').on('click', function() {
     var $nama = $('#nama').val();
     var $harga = $('#harga').val();

@@ -6,7 +6,7 @@
                     data-aos-delay="500">Elegan namun sederhana</h1>
                 <div data-aos="fade-in" data-aos-delay="1000">
                     <div class="d-md-flex justify-content-center mt-4 mb-3 my-md-5">
-                        <a href="#"
+                        <a href="<?= site_url('/category') ?>"
                             class="btn btn-skew-left btn-orange btn-orange-chunky text-white mx-1 w-100 w-md-auto mb-2 mb-md-0"><span>Berbelanja
                                 Sekarang <i class="ri-arrow-right-line align-middle fw-bold"></i></span></a>
                     </div>
@@ -28,12 +28,14 @@
                     }
                   }'>
             <div class="swiper-wrapper">
+                <?php foreach ($hero as $hr) : ?>
                 <div class="swiper-slide position-relative">
                     <div class="w-100 h-100 bg-img-cover animation-move bg-pos-center-center"
-                        style="background-image: url(<?= base_url(); ?>/assets/images/slideshows/slideshow-1.jpg);">
+                        style="background-image: url(<?= base_url('/assets/images/slideshows') . '/' . $hr->file_name ?>);">
                     </div>
                 </div>
-                <div class="swiper-slide position-relative">
+                <?php endforeach; ?>
+                <!-- <div class="swiper-slide position-relative">
                     <div class="w-100 h-100 bg-img-cover animation-move bg-pos-center-center"
                         style="background-image: url(<?= base_url(); ?>/assets/images/slideshows/slideshow-2.jpg);">
                     </div>
@@ -42,7 +44,7 @@
                     <div class="w-100 h-100 bg-img-cover animation-move bg-pos-center-center"
                         style="background-image: url(<?= base_url(); ?>/assets/images/slideshows/slideshow-3.jpg);">
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </div>

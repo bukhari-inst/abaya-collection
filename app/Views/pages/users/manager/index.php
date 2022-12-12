@@ -19,7 +19,7 @@
         </nav>
     </div><!-- End Page Title -->
 
-    <section class="section">
+    <!-- <section class="section">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 </main><!-- End #main -->
 

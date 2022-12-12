@@ -38,8 +38,23 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/index', 'Users::index');
 $routes->get('/category', 'Home::category');
-$routes->get('/admin', 'Staff::index');
-$routes->post('/tambahproduk', 'Staff::upload');
+$routes->get('/admin', 'Produk::index', ['filter' => 'role:Staff']);
+$routes->get('/produk', 'Produk::index', ['filter' => 'role:Staff']);
+$routes->post('/tambahProduk', 'Produk::upload', ['filter' => 'role:Staff']);
+$routes->post('/updateProduk', 'Produk::update', ['filter' => 'role:Staff']);
+$routes->post('/deleteProduk', 'Produk::delete', ['filter' => 'role:Staff']);
+$routes->get('/produkItems', 'Produk::produkItems', ['filter' => 'role:Staff, Manager']);
+$routes->post('/uploadProdukItems', 'Produk::uploadProdukItems', ['filter' => 'role:Staff']);
+$routes->post('/updateProdukItems', 'Produk::updateProdukItems', ['filter' => 'role:Staff']);
+$routes->post('/deleteProdukItems', 'Produk::deleteProdukItems', ['filter' => 'role:Staff']);
+$routes->post('/acceptProduk', 'Produk::acceptProduk', ['filter' => 'role:Manager']);
+
+// hero
+$routes->get('/hero', 'Hero::index', ['filter' => 'role:Staff, Manager']);
+$routes->post('/uploadHero', 'Hero::upload', ['filter' => 'role:Staff']);
+$routes->post('/updateHero', 'Hero::update', ['filter' => 'role:Staff']);
+$routes->post('/deleteHero', 'Hero::delete', ['filter' => 'role:Staff']);
+$routes->post('/acceptHero', 'Hero::acceptHero', ['filter' => 'role:Manager']);
 
 /*
  * --------------------------------------------------------------------

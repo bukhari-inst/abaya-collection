@@ -16,9 +16,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="<?= base_url() ?>/assets/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,8 +27,13 @@
     <link href="<?= base_url() ?>/assets/admin/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="<?= base_url() ?>/assets/admin/vendor/simple-datatables/style.css" rel="stylesheet">
 
+    <!-- select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <!-- Template Main CSS File -->
     <link href="<?= base_url() ?>/assets/admin/css/style.css" rel="stylesheet">
+    <!--load all Font Awesome styles -->
+    <link href="<?= base_url(); ?>/assets/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet" />
 </head>
 
 <body>
