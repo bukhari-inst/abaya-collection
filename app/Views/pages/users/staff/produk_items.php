@@ -265,7 +265,20 @@
                         </div>
                         <div class="col-sm-12 mb-3">
                             <label for="warna" class="form-label">Warna produk</label>
-                            <input type="text" class="form-control" value="<?= $prd->warna ?>" name="warna" id="warna">
+                            <!-- <input type="text" class="form-control" value="<?= $prd->warna ?>" name="warna" id="warna"> -->
+                            <select class="form-select" aria-label="Default select example" name="warna" id="warna">
+                                <option value="<?= $prd->warna ?>"><?= $prd->warna ?></option>
+                                <option value="Ungu">Ungu</option>
+                                <option value="Hijau">Hijau</option>
+                                <option value="Merah">Merah</option>
+                                <option value="Biru">Biru</option>
+                                <option value="Kuning">Kuning</option>
+                                <option value="Hitam">Hitam</option>
+                                <option value="Abu">Abu</option>
+                                <option value="Putih">Putih</option>
+                                <option value="Pink">Pink</option>
+                                <option value="Orange">Orange</option>
+                            </select>
                         </div>
                         <div class="col-sm-12 mb-3">
                             <label for="stok" class="form-label">Stok produk</label>
@@ -420,7 +433,20 @@
                         </div>
                         <div class="col-sm-12 mb-3">
                             <label for="warna" class="form-label">Warna produk</label>
-                            <input type="text" class="form-control" name="warna" id="warna">
+                            <!-- <input type="text" class="form-control" name="warna" id="warna"> -->
+                            <select class="form-select" aria-label="Default select example" name="warna" id="warna">
+                                <option selected>Pilih warna</option>
+                                <option value="Ungu">Ungu</option>
+                                <option value="Hijau">Hijau</option>
+                                <option value="Merah">Merah</option>
+                                <option value="Biru">Biru</option>
+                                <option value="Kuning">Kuning</option>
+                                <option value="Hitam">Hitam</option>
+                                <option value="Abu">Abu</option>
+                                <option value="Putih">Putih</option>
+                                <option value="Pink">Pink</option>
+                                <option value="Orange">Orange</option>
+                            </select>
                         </div>
                         <div class="col-sm-12 mb-3">
                             <label for="stok" class="form-label">Stok produk</label>
