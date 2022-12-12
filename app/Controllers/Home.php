@@ -19,7 +19,7 @@ class Home extends BaseController
     {
         $roleUser = $this->Muser->getRoleUser();
         $hero = $this->Mhero->where('status', 'Disetujui')->orderBy('id', 'DESC')->findAll();
-        $produk = $this->MprodukItems->getAllProdukItems();
+        $produk = $this->MprodukItems->getAllProdukItemsLimit8();
 
         $data = [
             'validation' => \Config\Services::validation(),

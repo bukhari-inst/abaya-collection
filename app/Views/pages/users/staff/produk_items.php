@@ -67,7 +67,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Produk</h5>
+                        <h5 class="card-title">Produk items</h5>
                         <?php if (in_groups('Staff')) : ?>
                         <div class="row mt-2">
                             <div class="col-lg-3">
