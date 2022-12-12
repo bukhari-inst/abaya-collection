@@ -257,7 +257,7 @@
 
                 <!-- Pagiation-->
                 <!-- Pagination-->
-                <nav class="border-top mt-5 pt-5 d-flex justify-content-between align-items-center"
+                <!-- <nav class="border-top mt-5 pt-5 d-flex justify-content-between align-items-center"
                     aria-label="Category Pagination">
                     <ul class="pagination">
                         <li class="page-item"><a class="page-link" href="#"><i
@@ -272,7 +272,7 @@
                         <li class="page-item"><a class="page-link" href="#">Next <i
                                     class="ri-arrow-right-line align-bottom"></i></a></li>
                     </ul>
-                </nav> <!-- / Pagination-->
+                </nav> / Pagination -->
 
             </div>
             <!-- / Category Products-->
