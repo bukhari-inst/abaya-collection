@@ -370,13 +370,13 @@
       const t = (e) => {
         const t = e.closest('.widget-filter-price');
         h.a.create(e, {
-          start: [60, 900],
+          start: [100000, 900000],
           connect: !0,
           tooltips: [!0, !0],
-          range: { min: 0, max: 1e3 },
+          range: { min: 0, max: 1000000 },
           pips: {
             mode: 'values',
-            values: [0, 250, 500, 750, 1e3],
+            values: [0, 250000, 500000, 750000, 1000000],
             density: 100,
           },
         });

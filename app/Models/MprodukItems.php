@@ -19,6 +19,39 @@ class MprodukItems extends Model
         'created_at', 'updated_at', 'deleted_at'
     ];
 
+    public function searchProduk(
+        $min = false,
+        $max = false,
+        $ungu = false,
+        $hijau = false,
+        $merah = false,
+        $biru = false,
+        $kuning = false,
+        $hitam = false,
+        $abu = false,
+        $putih = false,
+        $pink = false,
+        $orange = false
+    ) {
+        return $this->select('produk_items.id as idPd, 
+        produk_items.file_name as prdtFileName, warna, stok, 
+        prd.file_name as prdFileName, status, nama, harga, prd.id as prdId')
+            ->join('produk prd', 'prd.id = produk_items.produk_id')
+            ->where('harga >=', $min)
+            ->where('harga <=', $max)
+            ->like('warna', $ungu)
+            ->like('warna', $hijau)
+            ->like('warna', $merah)
+            ->like('warna', $biru)
+            ->like('warna', $kuning)
+            ->like('warna', $hitam)
+            ->like('warna', $abu)
+            ->like('warna', $putih)
+            ->like('warna', $pink)
+            ->like('warna', $orange)
+            ->findAll();
+    }
+
     public function getAllProdukItems()
     {
         return $this->select('produk_items.id as idPd, 

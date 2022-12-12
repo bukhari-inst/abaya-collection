@@ -56,6 +56,10 @@ $routes->post('/updateHero', 'Hero::update', ['filter' => 'role:Staff']);
 $routes->post('/deleteHero', 'Hero::delete', ['filter' => 'role:Staff']);
 $routes->post('/acceptHero', 'Hero::acceptHero', ['filter' => 'role:Manager']);
 
+// category
+$routes->post('/searchCategory', 'Home::searchCategory');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
