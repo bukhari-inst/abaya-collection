@@ -33,17 +33,17 @@ class Hero extends BaseController
 
         $data = [
             'id' => $hero['id'],
-            'status' => 'Disetujui',
+            'status' => $hero['status'],
         ];
 
         // dd($data);
 
         if (!$this->Mhero->save($data)) {
-            session()->setFlashdata('error', 'Hero gagal disetujui');
+            session()->setFlashdata('error', 'Status hero gagal diperbarui');
             return redirect()->back()->withInput();
         }
 
-        session()->setFlashdata('success', 'Hero berhasil disetujui');
+        session()->setFlashdata('success', 'Status hero berhasil diperbarui');
         return redirect()->back()->withInput();
     }
 
@@ -97,7 +97,7 @@ class Hero extends BaseController
             $file_name = $file->getRandomName();
             $file->move('assets/images/slideshows/', $file_name);
 
-            unlink('assets/images/slideshows/' . $file_name);
+            unlink('assets/images/slideshows/' . $valHero->file_name);
         }
 
         $data = [

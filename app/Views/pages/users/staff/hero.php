@@ -173,10 +173,11 @@
                         </div>
                         <div class="col-sm-12 mb-3">
                             <label for="nama" class="form-label">Pilih status</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" name="status" aria-label="Default select example">
                                 <option selected>Pilih status</option>
                                 <option value="Disetujui">Setujui</option>
                                 <option value="Ditolak">Tolak</option>
+                                <option value="Pending">Pending</option>
                             </select>
                         </div>
                     </div>

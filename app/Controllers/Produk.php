@@ -53,17 +53,17 @@ class Produk extends BaseController
 
         $data = [
             'id' => $produk['id'],
-            'status' => 'Disetujui',
+            'status' => $produk['status'],
         ];
 
         // dd($data);
 
         if (!$this->MprodukItems->save($data)) {
-            session()->setFlashdata('error', 'Produk gagal disetujui');
+            session()->setFlashdata('error', 'Status produk gagal diperbarui');
             return redirect()->back()->withInput();
         }
 
-        session()->setFlashdata('success', 'Produk berhasil disetujui');
+        session()->setFlashdata('success', 'Status produk berhasil diperbarui');
         return redirect()->back()->withInput();
     }
 
@@ -129,7 +129,7 @@ class Produk extends BaseController
             $file_name = $file->getRandomName();
             $file->move('assets/images/products/', $file_name);
 
-            unlink('assets/images/products/' . $file_name);
+            unlink('assets/images/products/' . $valProduk->file_name);
         }
 
         $data = [
@@ -269,7 +269,7 @@ class Produk extends BaseController
             $file_name = $file->getRandomName();
             $file->move('assets/images/products/cover/', $file_name);
 
-            unlink('assets/images/products/cover/' . $file_name);
+            unlink('assets/images/products/cover/' . $valProduk->file_name);
         }
 
         $data = [
@@ -313,21 +313,6 @@ class Produk extends BaseController
                     'max_size' => 'File foto cover maks < 1MB',
                 ]
             ],
-            // 'warna' => [
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => 'Warna produk harus disisi',
-            //     ]
-            // ],
-            // 'fileproduk' => [
-            //     'rules' => 'required|ext_in[fileproduk,png,jpeg,jpg,gif]|mime_in[fileproduk,image/png,image/jpeg,image/jpg]|max_size[fileproduk,5024]',
-            //     'errors' => [
-            //         'required' => 'Foto produk harus disisi',
-            //         'ext_in' => 'File foto produk produk yang anda upload bukan gambar',
-            //         'mime_in' => 'File foto produk produk yang anda upload bukan gambar',
-            //         'max_size' => 'File foto produk maks < 1MB',
-            //     ]
-            // ]
         ])) {
             return redirect()->back()->withInput();
         };

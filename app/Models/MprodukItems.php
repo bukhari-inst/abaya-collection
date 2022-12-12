@@ -19,6 +19,18 @@ class MprodukItems extends Model
         'created_at', 'updated_at', 'deleted_at'
     ];
 
+    public function getAllProdukItems()
+    {
+        return $this->select('produk_items.id as idPd, 
+        produk_items.file_name as prdtFileName, warna, stok, 
+        prd.file_name as prdFileName, status, nama, harga, prd.id as prdId')
+            ->join('produk prd', 'prd.id = produk_items.produk_id')
+            ->where('status', 'Disetujui')
+            ->groupBy('prdFileName')
+            ->orderBy('idPd', 'DESC')
+            ->findAll();
+    }
+
     public function getProdukWhereId($id = false)
     {
         return $this->where(['id' => $id])->first();
