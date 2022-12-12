@@ -120,7 +120,8 @@
                                 </picture>
                                 <picture class="position-absolute z-index-20 start-0 top-0 hover-show bg-light">
                                     <img class="w-100 img-fluid" title=""
-                                        src="<?= base_url('/assets/images/products/' . $prd->prdtFileName); ?>" alt="">
+                                        src="<?= base_url('/assets/images/products/' . $prd->prdtFileName); ?>"
+                                        alt="<?= $prd->prdtFileName ?>">
                                 </picture>
                                 <div class="card-actions">
                                     <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick
@@ -153,8 +154,10 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
                                 </div>
                                 <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                    href="#">Black Series</a>
-                                <p class="fw-bolder m-0 mt-2">Rp 650.000</p>
+                                    href="#"><?= $prd->nama ?></a>
+                                <p class="fw-bolder m-0 mt-2">
+                                    <?= "Rp " . number_format($prd->harga, 2, ',', '.'); ?>
+                                </p>
                             </div>
                         </div>
                         <!--/ Card Product-->
