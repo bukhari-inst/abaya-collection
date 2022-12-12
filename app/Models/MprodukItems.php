@@ -33,22 +33,17 @@ class MprodukItems extends Model
         $pink = false,
         $orange = false
     ) {
+        $colors = [
+            "$ungu", "$hijau", "$merah", "$biru",
+            "$kuning", "$hitam", "$abu", "$putih", "$pink", "$orange"
+        ];
         return $this->select('produk_items.id as idPd, 
         produk_items.file_name as prdtFileName, warna, stok, 
         prd.file_name as prdFileName, status, nama, harga, prd.id as prdId')
             ->join('produk prd', 'prd.id = produk_items.produk_id')
             ->where('harga >=', $min)
             ->where('harga <=', $max)
-            ->like('warna', $ungu)
-            ->like('warna', $hijau)
-            ->like('warna', $merah)
-            ->like('warna', $biru)
-            ->like('warna', $kuning)
-            ->like('warna', $hitam)
-            ->like('warna', $abu)
-            ->like('warna', $putih)
-            ->like('warna', $pink)
-            ->like('warna', $orange)
+            ->whereIn('warna', $colors)
             ->findAll();
     }
 
