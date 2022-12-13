@@ -18,7 +18,7 @@ class Produk extends BaseController
     public function index()
     {
         $roleUser = $this->Muser->getRoleUser();
-        $produk = $this->Mproduk->findAll();
+        $produk = $this->Mproduk->orderBy('id', 'DESC')->findAll();
         // dd($produk);
 
         $data = [
@@ -33,7 +33,7 @@ class Produk extends BaseController
     public function produkItems()
     {
         $roleUser = $this->Muser->getRoleUser();
-        $produk = $this->Mproduk->findAll();
+        $produk = $this->Mproduk->orderBy('nama', 'ASC')->findAll();
         $produkDetail = $this->MprodukItems->getAllProduk();
         // dd($produk);
 

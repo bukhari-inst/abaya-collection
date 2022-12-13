@@ -82,6 +82,7 @@ class MprodukItems extends Model
         produk_items.file_name as prdtFileName, warna, stok, 
         prd.file_name as prdFileName, status, nama, harga, prd.id as prdId')
             ->join('produk prd', 'prd.id = produk_items.produk_id')
+            ->orderBy('idPd', 'DESC')
             ->findAll();
     }
 }
