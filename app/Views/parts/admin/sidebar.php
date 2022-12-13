@@ -10,7 +10,7 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?= site_url('/hero') ?>">
-                <i class="bi bi-grid"></i>
+                <i class="bi bi-images"></i>
                 <span>Hero</span>
             </a>
         </li>
