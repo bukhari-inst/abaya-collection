@@ -34,14 +34,31 @@ class Produk extends BaseController
     {
         $roleUser = $this->Muser->getRoleUser();
         $produk = $this->Mproduk->orderBy('nama', 'ASC')->findAll();
-        $produkDetail = $this->MprodukItems->getAllProduk();
+        $produkItem = $this->MprodukItems->getProdukWhereUser();
         // dd($produk);
 
         $data = [
             'validation' => \Config\Services::validation(),
             'user' => $roleUser,
             'produks' => $produk,
-            'produk' => $produkDetail,
+            'produk' => $produkItem,
+        ];
+
+        return view('pages/users/staff/produk_items', $data);
+    }
+
+    public function mProdukItems()
+    {
+        $roleUser = $this->Muser->getRoleUser();
+        $produk = $this->Mproduk->orderBy('nama', 'ASC')->findAll();
+        $produkItem = $this->MprodukItems->getAllProduk();
+        // dd($produk);
+
+        $data = [
+            'validation' => \Config\Services::validation(),
+            'user' => $roleUser,
+            'produks' => $produk,
+            'produk' => $produkItem,
         ];
 
         return view('pages/users/staff/produk_items', $data);
@@ -116,10 +133,10 @@ class Produk extends BaseController
             return redirect()->back()->withInput();
         };
 
-        $produkDetail = $this->request->getPost();
-        $valProduk = $this->MprodukItems->getProdukWhereId($produkDetail['id']);
+        $produkItem = $this->request->getPost();
+        $valProduk = $this->MprodukItems->getProdukWhereId($produkItem['id']);
 
-        $warnaProduk = ucwords(strtolower($produkDetail['warna']));
+        $warnaProduk = ucwords(strtolower($produkItem['warna']));
 
         // take a file
         $file = $this->request->getFile('fileproduk');
@@ -133,11 +150,11 @@ class Produk extends BaseController
         }
 
         $data = [
-            'id' => $produkDetail['id'],
+            'id' => $produkItem['id'],
             'staff_id' => user_id(),
-            'produk_id' => $produkDetail['prdId'],
+            'produk_id' => $produkItem['prdId'],
             'warna' => $warnaProduk,
-            'stok' => $produkDetail['stok'],
+            'stok' => $produkItem['stok'],
             'file_name' => $file_name,
         ];
 
@@ -186,9 +203,9 @@ class Produk extends BaseController
             return redirect()->back()->withInput();
         };
 
-        $produkDetail = $this->request->getPost();
+        $produkItem = $this->request->getPost();
 
-        $warnaProduk = ucwords(strtolower($produkDetail['warna']));
+        $warnaProduk = ucwords(strtolower($produkItem['warna']));
         // take a file
         $file = $this->request->getFile('fileproduk');
         $file_name = $file->getRandomName();
@@ -196,9 +213,9 @@ class Produk extends BaseController
 
         $data = [
             'staff_id' => user_id(),
-            'produk_id' => $produkDetail['prdId'],
+            'produk_id' => $produkItem['prdId'],
             'warna' => $warnaProduk,
-            'stok' => $produkDetail['stok'],
+            'stok' => $produkItem['stok'],
             'file_name' => $file_name,
         ];
 

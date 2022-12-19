@@ -37,7 +37,7 @@
 
         <?php if (in_groups('Manager')) : ?>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?= site_url('/produkItems') ?>">
+            <a class="nav-link collapsed" href="<?= site_url('/mProdukItems') ?>">
                 <i class="bi bi-menu-button-wide"></i>
                 <span>Produk</span>
             </a>

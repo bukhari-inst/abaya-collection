@@ -48,6 +48,7 @@ $routes->post('/uploadProdukItems', 'Produk::uploadProdukItems', ['filter' => 'r
 $routes->post('/updateProdukItems', 'Produk::updateProdukItems', ['filter' => 'role:Staff']);
 $routes->post('/deleteProdukItems', 'Produk::deleteProdukItems', ['filter' => 'role:Staff']);
 $routes->post('/acceptProduk', 'Produk::acceptProduk', ['filter' => 'role:Manager']);
+$routes->get('/mProdukItems', 'Produk::mProdukItems', ['filter' => 'role:Manager']);
 
 // hero
 $routes->get('/hero', 'Hero::index', ['filter' => 'role:Staff, Manager']);

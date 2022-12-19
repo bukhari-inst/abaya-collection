@@ -80,9 +80,22 @@ class MprodukItems extends Model
     {
         return $this->select('produk_items.id as idPd, 
         produk_items.file_name as prdtFileName, warna, stok, 
+        prd.file_name as prdFileName, produk_items.status, nama, 
+        harga, prd.id as prdId, fullname')
+            ->join('produk prd', 'prd.id = produk_items.produk_id')
+            ->join('users usr', 'produk_items.staff_id = usr.id')
+            ->orderBy('idPd', 'DESC')
+            ->findAll();
+    }
+
+    public function getProdukWhereUser()
+    {
+        return $this->select('produk_items.id as idPd, 
+        produk_items.file_name as prdtFileName, warna, stok, 
         prd.file_name as prdFileName, status, nama, harga, prd.id as prdId')
             ->join('produk prd', 'prd.id = produk_items.produk_id')
             ->orderBy('idPd', 'DESC')
+            ->where('produk_items.staff_id', user_id())
             ->findAll();
     }
 }

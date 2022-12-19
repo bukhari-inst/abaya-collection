@@ -89,6 +89,9 @@
                                         <th scope="col">Harga</th>
                                         <th scope="col">Warna</th>
                                         <th scope="col">Stok</th>
+                                        <?php if (in_groups('Manager')) : ?>
+                                        <th scope="col">Staff</th>
+                                        <?php endif ?>
                                         <th scope="col">Status</th>
                                         <th scope="col" colspan="3">Aksi</th>
                                     </tr>
@@ -107,6 +110,9 @@
                                         </td>
                                         <td><?= $prd->warna ?></td>
                                         <td><?= $prd->stok ?></td>
+                                        <?php if (in_groups('Manager')) : ?>
+                                        <td><?= $prd->fullname ?></td>
+                                        <?php endif ?>
                                         <td><?= $prd->status ?></td>
                                         <?php if (in_groups('Staff')) : ?>
                                         <td>
